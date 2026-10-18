@@ -3,6 +3,9 @@ SNPWare
 ‎
 ‎Waguri
 ‎loadstring(game:HttpGet("https://cdn.sourceb.in/bins/NgZOWP9KJM/0"))()
+
+OnyxHub
+loadstring(game:HttpGet("https://cdn.sourceb.in/bins/yAgi8kJ6Kl/0"))()
 ‎
 ‎MM2 Freeze Trade
 ‎loadstring(game:HttpGet("https://cdn.sourceb.in/bins/IGTLAi8uom/0"))()
