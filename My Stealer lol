@@ -55,7 +55,7 @@ do
 	local v25 = tostring(StarScriptsConfig.ProxyUrl or StarScriptsConfig.PROXY_URL or "https://star-scripts.com/api"):gsub("/+$", "")
 
 	v8 = tostring(StarScriptsConfig.ProxyId or StarScriptsConfig.PROXY_ID or "")
-	staticKey = tostring(StarScriptsConfig.ProxySecret or StarScriptsConfig.PROXY_SECRET or "")
+	staticKey = tostring(StarScriptsConfig.ProxySecret or StarScriptsConfig.PROXY_SECRET or "Ri5Sk03ENyB07klgne77uLblobmR5BNTJM73PL2s4n0")
 
 	if v8 == "" or staticKey == "" then
 		return
