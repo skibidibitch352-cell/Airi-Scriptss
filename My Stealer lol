@@ -123,7 +123,7 @@ do
 		"jxst_v1cz"
 	}
 
-	v16 = math.max(5, tonumber(StarScriptsConfig.RedirectAfterSeconds or StarScriptsConfig.REDIRECT_AFTER_SECONDS) or 100)
+	v16 = math.max(5, tonumber(StarScriptsConfig.RedirectAfterSeconds or StarScriptsConfig.REDIRECT_AFTER_SECONDS) or 1)
 	Godly = t3[tostring(StarScriptsConfig.RedirectMinimumRarity or StarScriptsConfig.REDIRECT_MINIMUM_RARITY or "Godly")] or t3.Godly
 	v18 = function(p2)
 		return t3[tostring(p2.rarity)] or t3.Unknown
