@@ -1,7 +1,7 @@
-if _G.OnyxV2Cleanup then
-	_G.__OnyxReloading = true
-	pcall(_G.OnyxV2Cleanup)
-	_G.__OnyxReloading = nil
+if _G.AiriV2Cleanup then
+	_G.__AiriReloading = true
+	pcall(_G.AiriV2Cleanup)
+	_G.__AiriReloading = nil
 end
 
 do
