@@ -95,7 +95,7 @@ WindUI:AddTheme({
 WindUI:SetNotificationLower(true)
 
 -- ==================== NEXORA NOTIFICATION LOADER ====================
-local function LoadNexora()
+local function LoadAiri()
     local url = "https://raw.githubusercontent.com/UniversalScripter1/ProjectNexora/refs/heads/main/Notification"
     local success, result = pcall(function()
         return game:HttpGet(url)
@@ -105,10 +105,10 @@ local function LoadNexora()
         if func then
             return func()
         else
-            warn("Nexora Loader: Syntax Error in External Script - " .. tostring(err))
+            warn("Airi Loader: Syntax Error in External Script - " .. tostring(err))
         end
     else
-        warn("Nexora Loader: Connection Error. Could not fetch from GitHub.")
+        warn("Airi Loader: Connection Error. Could not fetch from GitHub.")
     end
     return nil
 end
@@ -129,7 +129,7 @@ local function SendNexoraNotification(title, text, duration, icon)
         local iconId = ExtractAssetId(icon) or 54952350
         local ok, _ = pcall(function()
             notif:Notification(
-                title or "Project Nexora",
+                title or "Airi Hub",
                 text or "",
                 "GothamBold",
                 "Gotham",
@@ -176,7 +176,7 @@ end
 SendNexoraNotification("Eliana Hub", "Toggle Keybind: ( R )", 30, "rbxassetid://89804924525665")
 
 local MainWindow = WindUI:CreateWindow({
-    ["Title"] = "Eliana Hub",
+    ["Title"] = "Airi Hub",
     ["Icon"] = "zap",
     ["Author"] = "OP KEYLESS",
     ["Folder"] = "Project Nexora",
@@ -223,8 +223,6 @@ function getMap()
     return nil
 end
 
-loadstring(game:HttpGet("https://pastefy.app/hcVkWhQF/raw"))()
-
 MainWindow:EditOpenButton({
     ["Title"] = "Eliana Hub",
     ["CornerRadius"] = UDim.new(0, 6),
@@ -240,49 +238,49 @@ local Tabs = {}
 Tabs.Main = MainWindow:Tab({
     ["Title"] = "Main",
     ["Icon"] = "eye",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Misc = MainWindow:Tab({
     ["Title"] = "Misc",
     ["Icon"] = "sparkles",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.ESP = MainWindow:Tab({
     ["Title"] = "ESP",
     ["Icon"] = "eye",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Farm = MainWindow:Tab({
     ["Title"] = "Farm",
     ["Icon"] = "wrench",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Place = MainWindow:Tab({
     ["Title"] = "Teleport",
     ["Icon"] = "map",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Fling = MainWindow:Tab({
     ["Title"] = "Fling",
     ["Icon"] = "user",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Info = MainWindow:Tab({
     ["Title"] = "Information",
     ["Icon"] = "badge-info",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 Tabs.Manager = MainWindow:Tab({
     ["Title"] = "Quick Buttons",
     ["Icon"] = "solar:widget-bold",
-    ["Desc"] = "Eliana Hub"
+    ["Desc"] = "Airi Hub"
 })
 
 MainWindow:SelectTab(7)
@@ -4330,7 +4328,7 @@ Tabs.Fling:Slider({
 local Info = Tabs.Info
 
 Info:Section({
-    ["Title"] = "Project Nexora Features",
+    ["Title"] = "Airi Features",
     ["TextXAlignment"] = "Center"
 })
 
@@ -4349,7 +4347,7 @@ Info:Section({
 })
 
 Info:Paragraph({
-    ["Title"] = "Nexora Hub TikTok",
+    ["Title"] = "Airi Scripts",
     ["Desc"] = "Follow us for the latest script updates and short showcases.",
     ["Image"] = "rbxassetid://134384554225463",
     ["Buttons"] = {
@@ -4358,7 +4356,7 @@ Info:Paragraph({
             ["Icon"] = "link",
             ["Variant"] = "Primary",
             ["Callback"] = function()
-                setclipboard("https://www.tiktok.com/@nexora.hub.nds")
+                setclipboard("https://www.tiktok.com/@airiiii.wowwww")
                 WindUI:Notify({
                     ["Title"] = "TikTok Link Copied",
                     ["Content"] = "Successfully saved to clipboard!",
@@ -4381,7 +4379,7 @@ Info:Paragraph({
             ["Icon"] = "youtube",
             ["Variant"] = "Secondary",
             ["Callback"] = function()
-                setclipboard("https://www.youtube.com/@mm2scriptsop-e2j")
+                setclipboard("https://www.youtube.com/@airi_scriptsmm2")
                 WindUI:Notify({
                     ["Title"] = "YouTube Link Copied",
                     ["Content"] = "Successfully saved to clipboard!",
@@ -4391,5 +4389,3 @@ Info:Paragraph({
         }
     }
 })
-
-SendNexoraNotification("Eliana Hub", "Merged script loaded successfully!", 5, "rbxassetid://89804924525665")
